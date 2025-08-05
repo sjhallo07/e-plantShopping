@@ -255,7 +255,16 @@ function ProductList({ onHomeClick }) {
                     </div>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '1100px' }}>
-                    <div> <a href="#" style={{ color: 'white', fontSize: '30px', textDecoration: 'none' }}>Plants</a></div>
+                    <div> <a
+  href="#"
+  style={{ color: 'white', fontSize: '30px', textDecoration: 'none' }}
+  onClick={(e) => {
+    e.preventDefault(); // Prevent default anchor behavior
+    handleContinueShopping(e); // Call your handler to show product grid
+  }}
+>
+  Plants
+</a></div>
                     <div>
                         <a href="#" onClick={handleCartClick} style={{ color: 'white', fontSize: '30px', textDecoration: 'none' }}>
                             <h1 className='cart'>

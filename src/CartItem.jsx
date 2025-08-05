@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addItem, removeItem, clearCart } from './CartSlice';
+import { addItem, removeItem, clearCart, updateQuantity } from './CartSlice';
 import './CartItem.css';
 
 const CartItem = ({ onContinueShopping }) => {
@@ -38,12 +38,15 @@ const CartItem = ({ onContinueShopping }) => {
   const handleRemove = (item) => {
     dispatch(removeItem(item));
   };
+  const handleCheckoutShopping = (e) => {
+    alert('Functionality to be added for future reference');
+  };
 
   // Continue shopping
   const handleContinueShopping = (e) => {
-    e.preventDefault();
-    onContinueShopping();
-  };
+  // Logic to switch view back to product grid
+  setShowProductList(true); // Example: show the product listing
+};
 
   return (
     <div className="cart-container">
@@ -77,8 +80,10 @@ const CartItem = ({ onContinueShopping }) => {
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick={handleContinueShopping}>Continue Shopping</button>
         <br />
-        <button className="get-started-button1">Checkout</button>
-        <button onClick={() => dispatch(clearCart())}>Clear Cart</button>
+        <button className="get-started-button1" onClick={handleCheckoutShopping}>
+  Checkout
+</button>
+        <button onClick={() => dispatch(updateQuantity())}>Update Cart</button>
       </div>
     </div>
   );
