@@ -17,7 +17,7 @@ const cartSlice = createSlice({
                 state.items.push({ ...item, quantity: 1 });
             }
         },
-        removeItem: (state, action) => {
+        updateQuantity: (state, action) => {
             // If decrement flag is present, decrease quantity
             const item = action.payload;
             const existing = state.items.find(i => i.name === item.name);
@@ -27,7 +27,7 @@ const cartSlice = createSlice({
                 state.items = state.items.filter(i => i.name !== item.name);
             }
         },
-        updateQuantity: (state) => {
+        removeItem: (state) => {
             state.items = [];
         }
     }

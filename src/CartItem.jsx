@@ -78,12 +78,13 @@ const CartItem = ({ onContinueShopping }) => {
         )}
       </div>
       <div className="continue_shopping_btn">
-        <button className="get-started-button" onClick={handleContinueShopping}>Continue Shopping</button>
+      <button className="get-started-button" onClick={handleContinueShopping}>
+          Continue Shopping </button>
         <br />
         <button className="get-started-button1" onClick={handleCheckoutShopping}>
   Checkout
 </button>
-        <button onClick={() => dispatch(updateQuantity())}>Update Cart</button>
+        <button className="get-started-button3" onClick={() => dispatch(removeItem())}>Remove item</button>
       </div>
     </div>
   );
